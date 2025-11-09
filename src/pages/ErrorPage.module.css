@@ -1,0 +1,39 @@
+.error {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), var(--glass));
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: var(--content-padding);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  max-width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  h1 {
+    font-size: 64px;
+  }
+  p {
+    font-size: 24px;
+  }
+  .btn {
+    text-decoration: none;
+    font-weight: 600;
+    width: 100%;
+    font-size: 24px;
+    border-radius: 8px;
+    background: linear-gradient(
+      90deg,
+      rgba(110, 231, 183, 0.12),
+      rgba(110, 231, 183, 0.06)
+    );
+    color: var(--accent);
+    border: 1px solid rgba(110, 231, 183, 0.12);
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 100%;
+  }
+}

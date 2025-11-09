@@ -1,0 +1,29 @@
+/* globals.css */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #9aa4b2;
+  --accent: #6ee7b7;
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 12px;
+  --gap: 1rem;
+  --max-width: 1100px;
+  --content-padding: 1.25rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color-scheme: dark;
+}
+
+/* Page layout */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, #071024 0%, #081428 50%, #07122b 100%);
+  color: #e6eef6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
