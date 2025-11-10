@@ -1,0 +1,32 @@
+/* comment card styling  */
+.card {
+  background: var(--glass);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+}
+/* comment name styling  */
+.name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+}
+
+/* comment body styling  */
+.body {
+  color: var(--muted);
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+/* comment email styling */
+.email {
+  color: var(--accent);
+  font-size: 0.85rem;
+}

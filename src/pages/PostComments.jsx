@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { fetchPost, fetchComments } from "../services/api";
 import styles from "./PostComments.module.css";
 import Loader from "../components/Loader";
+import CommentCard from "../components/CommentCard";
 
 const PostComments = () => {
   const { postId } = useParams();
@@ -63,11 +64,7 @@ const PostComments = () => {
 
       <div className={styles.commentsList}>
         {comments.map((c) => (
-          <div key={c.id} className={styles.commentCard}>
-            <p className={styles.commentName}>{c.name}</p>
-            <p className={styles.commentBody}>{c.body}</p>
-            <p className={styles.commentEmail}>{c.email}</p>
-          </div>
+          <CommentCard key={c.id} c={c} />
         ))}
       </div>
     </div>

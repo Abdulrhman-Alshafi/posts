@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { fetchPostsByUser } from "../services/api";
 import styles from "./UserPosts.module.css";
 import Loader from "../components/Loader";
+import PostCard from "../components/PostCard";
 const UserPosts = () => {
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
@@ -26,8 +27,12 @@ const UserPosts = () => {
 
   if (loading) {
     return (
-      <div className={styles.container}>
-        <Loader text="Loading user posts..." />
+      <div className={styles.postsGrid}>
+        {posts.length > 0 ? (
+          posts.map((post) => <PostCard key={post.id} post={post} />)
+        ) : (
+          <p>No posts found.</p>
+        )}
       </div>
     );
   }
@@ -39,16 +44,7 @@ const UserPosts = () => {
 
       <div className={styles.postsGrid}>
         {posts.map((post) => (
-          <div key={post.id} className={styles.postCard}>
-            <h2 className={styles.postTitle}>{post.title}</h2>
-            <p className={styles.postBody}>{post.body}</p>
-            <button
-              className={styles.button}
-              onClick={() => navigate(`/postComments/${post.id}`)}
-            >
-              View Comments
-            </button>
-          </div>
+          <PostCard key={post.id} post={post} />
         ))}
       </div>
     </div>
