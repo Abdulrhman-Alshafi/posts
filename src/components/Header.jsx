@@ -14,7 +14,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <h1 className={styles.logo} onClick={() => navigate("/")}>
-          My<span>App</span>
+          My<span>Post</span>
         </h1>
         <nav className={styles.nav}>
           {user ? (
