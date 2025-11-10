@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchPostsByUser } from "../services/api";
-
+import styles from "./UserPosts.module.css";
 const UserPosts = () => {
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
@@ -22,18 +22,18 @@ const UserPosts = () => {
   }, [navigate]);
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">
+    <div className={styles.container}>
+      <h1 className={styles.title}>
         {user ? `${user.name}'s Posts` : "Loading..."}
       </h1>
 
-      <div className="grid gap-4">
+      <div className={styles.postsGrid}>
         {posts.map((post) => (
-          <div key={post.id} className="border rounded-lg p-4 shadow">
-            <h2 className="font-semibold">{post.title}</h2>
-            <p className="text-sm text-gray-600 mb-2">{post.body}</p>
+          <div key={post.id} className={styles.postCard}>
+            <h2 className={styles.postTitle}>{post.title}</h2>
+            <p className={styles.postBody}>{post.body}</p>
             <button
-              className="bg-blue-500 text-white px-3 py-1 rounded"
+              className={styles.button}
               onClick={() => navigate(`/postComments/${post.id}`)}
             >
               View Comments

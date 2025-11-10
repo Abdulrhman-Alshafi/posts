@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import styles from "./LoginForm.module.css";
 const LoginForm = ({ users, onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,25 +24,25 @@ const LoginForm = ({ users, onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <input
         type="email"
         placeholder="Email"
         value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
+        onChange={(e) => setEmail(e.target.value)}
+        className={styles.input}
       />
       <input
-        type="text"
+        type="password"
         placeholder="Password"
         value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
+        onChange={(e) => setPassword(e.target.value)}
+        className={styles.input}
       />
-      {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-      <button type="submit">Login</button>
+      {error && <p className={styles.error}>{error}</p>}
+      <button type="submit" className={styles.button}>
+        Login
+      </button>
     </form>
   );
 };
