@@ -14,7 +14,6 @@ const router = createBrowserRouter([
       { index: true, element: <Login /> },
       { path: "userPosts", element: <UserPosts /> },
       { path: "postComments/:postId", element: <PostComments /> },
-      { path: "error", element: <ErrorPage /> },
     ],
   },
 ]);
