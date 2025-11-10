@@ -4,7 +4,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 700px;
+  max-width: 43.75rem;
   width: 90%;
   padding: var(--content-padding);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), var(--glass));
