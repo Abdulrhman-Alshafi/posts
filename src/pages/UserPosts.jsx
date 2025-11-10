@@ -22,7 +22,7 @@ const UserPosts = () => {
     fetchPostsByUser(storedUser.id)
       .then((data) => setPosts(data))
       .catch(() => console.error("Failed to fetch posts"))
-      .finally(() => setLoading(false)); // stop loading after fetch completes
+      .finally(() => setLoading(false));
   }, [navigate]);
 
   if (loading) {
