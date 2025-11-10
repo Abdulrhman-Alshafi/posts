@@ -28,11 +28,7 @@ const UserPosts = () => {
   if (loading) {
     return (
       <div className={styles.postsGrid}>
-        {posts.length > 0 ? (
-          posts.map((post) => <PostCard key={post.id} post={post} />)
-        ) : (
-          <p>No posts found.</p>
-        )}
+        <Loader />
       </div>
     );
   }
@@ -44,7 +40,7 @@ const UserPosts = () => {
 
       <div className={styles.postsGrid}>
         {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
+          <PostCard key={post} post={post} />
         ))}
       </div>
     </div>
