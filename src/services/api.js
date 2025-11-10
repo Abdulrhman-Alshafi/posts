@@ -1,5 +1,3 @@
-// src/services/api.js
-
 const API_URL = "https://jsonplaceholder.typicode.com";
 
 // function for fetching all users
