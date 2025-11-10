@@ -6,17 +6,19 @@ const LoginForm = ({ users, onLogin }) => {
   const [error, setError] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const user = users.find((u) => u.email === email);
-    if (email === "" || password === "") {
-      setError("add email and password");
-      return;
-    }
-    if (!user) {
-      setError("User Not Found");
+
+    if (email.trim() === "" || password.trim() === "") {
+      setError("Please enter both email and password.");
       return;
     }
     if (password.length < 8) {
-      setError("Password must be at least 8 characters.");
+      setError("Password must be at least 8 characters long.");
+      return;
+    }
+    if (!user) {
+      setError("User not found. Please check your email.");
       return;
     }
     setError("");

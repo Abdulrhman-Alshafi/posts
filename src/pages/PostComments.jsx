@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchPost, fetchComments } from "../services/api";
 import styles from "./PostComments.module.css";
+import Loader from "../components/Loader";
 
 const PostComments = () => {
   const { postId } = useParams();
@@ -41,10 +42,7 @@ const PostComments = () => {
   if (loading) {
     return (
       <div className={styles.container}>
-        <div className={styles.loadingWrapper}>
-          <div className={styles.spinner}></div>
-          <p className={styles.loadingText}>Loading post and comments...</p>
-        </div>
+        <Loader text="Loading post and comments..." />
       </div>
     );
   }
@@ -54,7 +52,6 @@ const PostComments = () => {
       <button className={styles.backButton} onClick={() => navigate(-1)}>
         ← Back
       </button>
-
       {post && (
         <div className={styles.postContainer}>
           <h1 className={styles.postTitle}>{post.title}</h1>

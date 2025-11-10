@@ -1,0 +1,45 @@
+/* == loading styling start == */
+.loadingWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loadingText {
+  color: var(--muted);
+  font-size: 1rem;
+  text-align: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* == loading styling end == */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.25rem;
+  }
+
+  .postTitle {
+    font-size: 1.5rem;
+  }
+
+  .commentsTitle {
+    font-size: 1.25rem;
+  }
+}

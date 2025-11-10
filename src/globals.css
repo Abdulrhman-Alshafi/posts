@@ -24,6 +24,4 @@ body {
   margin: 0;
   background: linear-gradient(180deg, #071024 0%, #081428 50%, #07122b 100%);
   color: #e6eef6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
